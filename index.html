@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Yeni görev...">
+    <button onclick="addTask()">Ekle</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskList = document.getElementById('taskList');
+            const li = document.createElement('li');
+            li.textContent = taskInput.value;
+            li.onclick = () => li.style.textDecoration = 'line-through';
+            taskList.appendChild(li);
+            taskInput.value = '';
+        }
+    </script>
+</body>
+</html>
